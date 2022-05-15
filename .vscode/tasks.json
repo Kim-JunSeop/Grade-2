@@ -1,0 +1,45 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe 활성 파일 빌드",
+			"command": "C:\\mingw64\\bin\\g++.exe",
+			"args": [
+				"-g",
+				"${fileDirname}\\*.cpp",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "컴파일러: C:\\mingw64\\bin\\g++.exe"
+		},
+		{
+			"label": "execute",
+			"command": "cmd",
+			"group": "test",
+			"args": [
+				"/C",
+				"${fileDirname}\\${fileBasenameNoExtension}"
+			]
+		},
+		{
+			"type": "npm",
+			"script": "test",
+			"path": "extensions/cschlosser.doxdocgen-1.3.2/",
+			"group": "test",
+			"problemMatcher": [],
+			"label": "npm: test - extensions/cschlosser.doxdocgen-1.3.2",
+			"detail": "yarn compile && node ./out/test/runTests.js"
+		}
+	]
+}
